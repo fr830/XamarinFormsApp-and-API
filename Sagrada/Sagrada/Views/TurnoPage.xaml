@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sagrada.Views.TurnoPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Solicitar turno">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <BoxView Color="DarkBlue" Opacity="0.5"/>
+                <Grid Padding="425,100,425,100">
+                    <BoxView Color="WhiteSmoke" Opacity="0.9" />
+
+                    <StackLayout Padding="150,50,150,50" BindingContext="{Binding Turno}">
+                        <Label Text="Ingrese el DNI para saber si el usuario ya se registro" VerticalOptions="CenterAndExpand"  HorizontalOptions="FillAndExpand"  Margin="5"   />
+                        <Entry Placeholder="Ingrese el DNI del paciente" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="5" Text="{Binding BusquedaDNI,Mode=TwoWay}"/>
+                        <Button Text="Buscar Paciente" Command="{Binding BuscarPacienteCommand}"/>
+                        <Label Text="{Binding PacienteEncontrado,Mode=TwoWay}" IsEnabled="{Binding IsEnabledPaciente,Mode=TwoWay}" IsVisible="{Binding IsEnabledPaciente,Mode=TwoWay}"/>
+
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Label 
+                        Grid.Column="0" 
+                        Grid.Row="0" 
+                        Text="Nombre*" 
+                        TextColor="Black" 
+                        VerticalOptions="Center"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Label>
+                            
+                            <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="0" 
+                        Placeholder="Ingrese nombre del paciente" 
+                        TextColor="Black" 
+                        Text="{Binding Nombre, Mode=TwoWay}"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Entry>
+                            <Label Grid.Column="1" Grid.Row="1" TextColor="Red" FontSize="14" Text="*Este campo es obligatorio" IsEnabled="{Binding IsEnabledNombreValidacion,Mode=TwoWay}" IsVisible="{Binding IsEnabledNombreValidacion,Mode=TwoWay}"/>
+                            <Label 
+                        Grid.Column="0" 
+                        Grid.Row="2" 
+                        Text="Apellido*" 
+                        TextColor="Black" 
+                        VerticalOptions="Center"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Label>
+                            <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="2" 
+                        Placeholder="Ingrese apellido del paciente" 
+                        TextColor="Black" 
+                        Text="{Binding Apellido, Mode=TwoWay}"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Entry>
+                            <Label Grid.Column="1" Grid.Row="3" TextColor="Red" FontSize="14" Text="*Este campo es obligatorio" IsEnabled="{Binding IsEnabledApellidoValidacion,Mode=TwoWay}" IsVisible="{Binding IsEnabledApellidoValidacion,Mode=TwoWay}"/>
+                            <Label 
+                        Grid.Column="0" 
+                        Grid.Row="4" 
+                        Text="DNI*" 
+                        TextColor="Black" 
+                        VerticalOptions="Center"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Label>
+                            <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="4" 
+                        Placeholder="Ingrese DNI del paciente" 
+                        TextColor="Black" 
+                        Text="{Binding DNI, Mode=TwoWay}"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Entry>
+                            <Label Grid.Column="1" Grid.Row="5" TextColor="Red" FontSize="14" Text="*Este campo es obligatorio" IsEnabled="{Binding IsEnabledDniValidacion,Mode=TwoWay}" IsVisible="{Binding IsEnabledDniValidacion,Mode=TwoWay}"/>
+                            <Label 
+                        Grid.Column="0" 
+                        Grid.Row="6" 
+                        Text="Email*" 
+                        TextColor="Black" 
+                        VerticalOptions="Center"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Label>
+                            <Entry 
+                        Keyboard="Email" 
+                        Grid.Column="1" 
+                        Grid.Row="6" 
+                        Placeholder="Ingrese Email del paciente" 
+                        TextColor="Black" 
+                        Text="{Binding Email, Mode=TwoWay}"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Entry>
+                            <Label Grid.Column="1" Grid.Row="7" TextColor="Red" FontSize="14" Text="*Este campo es obligatorio" IsEnabled="{Binding IsEnabledEmailValidacion,Mode=TwoWay}" IsVisible="{Binding IsEnabledEmailValidacion,Mode=TwoWay}"/>
+                            <Label 
+                        Grid.Column="0" 
+                        Grid.Row="8" 
+                        Text="Telefono" 
+                        TextColor="Black" 
+                        VerticalOptions="Center"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Label>
+                            <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="8" 
+                        Keyboard="Telephone" 
+                        Placeholder="Ingrese telefono del paciente" 
+                        TextColor="Black" 
+                        Text="{Binding Telefono, Mode=TwoWay}"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Entry>
+                            <Label 
+                        Grid.Column="0" 
+                        Grid.Row="9" 
+                        Text="Fecha de nacimiento*" 
+                        TextColor="Black" 
+                        VerticalOptions="Center"
+                        IsEnabled="{Binding IsEnabledRegistro,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}">
+                            </Label>
+                            <DatePicker 
+                        Grid.Column="1" 
+                        Grid.Row="9" 
+                        IsEnabled="{Binding IsEnabledRegistro, Mode=TwoWay}" 
+                        IsVisible="{Binding IsEnabledRegistro, Mode=TwoWay}" 
+                        MaximumDate="{Binding FechaMaxima, Mode=TwoWay}"
+                        Date="{Binding FechaDeNacimiento, Mode=TwoWay}">
+                            </DatePicker>
+
+                        </Grid>
+                        <Label Text="Seleccione una especialidad" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  IsEnabled="{Binding IsEnabledEspecialidad,Mode=TwoWay}" IsVisible="{Binding IsEnabledEspecialidad,Mode=TwoWay}"   />
+                        <Picker   ItemsSource="{Binding EspecialidadResponses, Mode=TwoWay}" ItemDisplayBinding="{Binding Nombre, Mode=TwoWay}" SelectedItem="{Binding EspecialidadSeleccionada, Mode=TwoWay}" IsEnabled="{Binding IsEnabledEspecialidad,Mode=TwoWay}" IsVisible="{Binding IsEnabledEspecialidad,Mode=TwoWay}" />
+                        <ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center"  IsRunning="{Binding IsRunning, Mode=TwoWay}"/>
+                        <Label Text="Seleccione un medico" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  IsEnabled="{Binding IsEnabledMedico, Mode=TwoWay}" IsVisible="{Binding IsEnabledMedico, Mode=TwoWay}"  />
+                        <Picker   IsEnabled="{Binding IsEnabledMedico, Mode=TwoWay}" IsVisible="{Binding IsEnabledMedico, Mode=TwoWay}" ItemsSource="{Binding MedicoResponses, Mode=TwoWay}" ItemDisplayBinding="{Binding FullName, Mode=TwoWay}" SelectedItem="{Binding MedicoSeleccionado, Mode=TwoWay}" />
+
+                        <Label Text="Seleccione Obra social del paciente" HorizontalOptions="CenterAndExpand" IsEnabled="{Binding IsEnabledObraSocial,Mode=TwoWay}" IsVisible="{Binding IsEnabledObraSocial,Mode=TwoWay}" />
+                        <Picker Margin="5" ItemsSource="{Binding Prepaga, Mode=TwoWay}" ItemDisplayBinding="{Binding Nombre, Mode=TwoWay}" SelectedItem="{Binding PrepagaSeleccionada, Mode=TwoWay}" IsEnabled="{Binding IsEnabledObraSocial,Mode=TwoWay}" IsVisible="{Binding IsEnabledObraSocial,Mode=TwoWay}"/>
+
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Label 
+                        Grid.Column="0" 
+                        Grid.Row="0" 
+                        Text="Obra social" 
+                        TextColor="Black" 
+                        VerticalOptions="Center"
+                        IsEnabled="{Binding IsEnabledRegistroObraSocial,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistroObraSocial, Mode=TwoWay}">
+                            </Label>
+                            <Picker  
+                        Grid.Column="1" 
+                        Grid.Row="0"
+                        IsEnabled="{Binding IsEnabledRegistroObraSocial,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistroObraSocial, Mode=TwoWay}"
+                        ItemsSource="{Binding ObraSocialResponses, Mode=TwoWay}" 
+                        ItemDisplayBinding="{Binding Nombre, Mode=TwoWay}" 
+                        SelectedItem="{Binding ObraSocialSeleccionada, Mode=TwoWay}" >
+                            </Picker>
+                            <Label 
+                        Grid.Column="0" 
+                        Grid.Row="1" 
+                        Text="Nro Afiliado" 
+                        TextColor="Black" 
+                        VerticalOptions="Center"
+                        IsEnabled="{Binding IsEnabledRegistroObraSocial,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistroObraSocial, Mode=TwoWay}">
+                            </Label>
+                            <Entry 
+                        Grid.Column="1" 
+                        Grid.Row="1" 
+                        Placeholder="Ingrese Nro afiliado del paciente" 
+                        TextColor="Black" 
+                        Text="{Binding NroAfiliado, Mode=TwoWay}"
+                        IsEnabled="{Binding IsEnabledRegistroObraSocial,Mode=TwoWay}"
+                        IsVisible="{Binding IsEnabledRegistroObraSocial, Mode=TwoWay}">
+                            </Entry>
+                        </Grid>
+                        <Label TextColor="DarkRed"  Text="{Binding TrabajaObraSocial, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsEnabled="{Binding IsEnabledTrabajaObraSocial, Mode=TwoWay}" IsVisible="{Binding IsEnabledTrabajaObraSocial, Mode=TwoWay}"/>
+
+                        <Label Text="-Seleccione un dia (Recuerde que solo puede solicitar un turno con 7 dias de antelación)-" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" IsEnabled="{Binding IsEnabledFecha, Mode=TwoWay}" IsVisible="{Binding IsEnabledFecha, Mode=TwoWay}"  />
+                        <DatePicker MinimumDate="{Binding FechaMaxima, Mode=TwoWay}"  IsEnabled="{Binding IsEnabledFecha, Mode=TwoWay}" IsVisible="{Binding IsEnabledFecha, Mode=TwoWay}" Date="{Binding Fecha, Mode=TwoWay}"/>
+                        <Label Text="Seleccione una hora" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  IsEnabled="{Binding IsEnabledFecha, Mode=TwoWay}" IsVisible="{Binding IsEnabledFecha, Mode=TwoWay}"  />
+
+                        <StackLayout Orientation="Horizontal">
+                            <Picker  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsEnabled="{Binding IsEnabledFecha, Mode=TwoWay}" IsVisible="{Binding IsEnabledFecha, Mode=TwoWay}" ItemsSource="{Binding Hora, Mode=TwoWay}" SelectedItem="{Binding HoraSeleccionada, Mode=TwoWay}"/>
+                            <Picker  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsEnabled="{Binding IsEnabledFecha, Mode=TwoWay}" IsVisible="{Binding IsEnabledFecha, Mode=TwoWay}" ItemsSource="{Binding Minuto, Mode=TwoWay}" SelectedItem="{Binding MinutoSeleccionado, Mode=TwoWay}"/>
+                        </StackLayout>
+
+                        <Label TextColor="DarkRed" Text="{Binding TrabajaFecha, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsEnabled="{Binding IsEnabledTrabajaFecha, Mode=TwoWay}" IsVisible="{Binding IsEnabledTrabajaFecha, Mode=TwoWay}"/>
+
+
+                        <Label TextColor="BlueViolet"  Text="{Binding MontoString, Mode=TwoWay}" IsEnabled="{Binding IsEnabledFecha, Mode=TwoWay}" IsVisible="{Binding IsEnabledFecha, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+
+                        <Button Margin="20" Text="Solicitar turno" IsEnabled="{Binding IsEnabledBoton, Mode=TwoWay}" IsVisible="{Binding IsEnabledBoton, Mode=TwoWay}"  Command="{Binding SolicitarTurnoCommand}"/>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

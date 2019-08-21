@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sagrada.Views.PagoPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Registrar pago">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Color="DarkBlue" Opacity="0.6"/>
+
+            <Grid Padding="425,200,425,200">
+                <BoxView Color="WhiteSmoke" Opacity="0.9" />
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="150,50,150,50" BindingContext="{Binding Pago}">
+                    <Label Text="Seleccione un paciente de la lista"/>
+                    <Picker Margin="5" ItemsSource="{Binding Pacientes, Mode=TwoWay}" ItemDisplayBinding="{Binding FullName, Mode=TwoWay}" SelectedItem="{Binding PacienteSeleccionado, Mode=TwoWay}"/>
+                    <Label Text="A continuación, seleccione un tuno de la lista" IsEnabled="{Binding IsEnabledTurno,Mode=TwoWay}" IsVisible="{Binding IsEnabledTurno,Mode=TwoWay}"/>
+                    <Picker Margin="5" ItemsSource="{Binding Turnos, Mode=TwoWay}" SelectedItem="{Binding TurnoSeleccionado, Mode=TwoWay}" IsEnabled="{Binding IsEnabledTurno,Mode=TwoWay}" IsVisible="{Binding IsEnabledTurno,Mode=TwoWay}"/>
+
+                    <Label  IsEnabled="{Binding IsEnabledDatos, Mode=TwoWay}" IsVisible="{Binding IsEnabledDatos, Mode=TwoWay}" Text="{Binding DatosString, Mode=TwoWay}" />
+
+                    <Label  IsEnabled="{Binding IsEnabledFormaDePago, Mode=TwoWay}" IsVisible="{Binding IsEnabledFormaDePago, Mode=TwoWay}" Text="Elija la forma de pago" />
+                    <Picker Margin="5" ItemsSource="{Binding FormaDePago, Mode=TwoWay}" SelectedItem="{Binding FormaDePagoSeleccionada, Mode=TwoWay}"  IsEnabled="{Binding IsEnabledFormaDePago, Mode=TwoWay}" IsVisible="{Binding IsEnabledFormaDePago, Mode=TwoWay}"/>
+
+                    <Grid Margin="30,0,20,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" IsEnabled="{Binding IsEnabledTarjeta, Mode=TwoWay}" IsVisible="{Binding IsEnabledTarjeta, Mode=TwoWay}" Text="Banco emisor" HorizontalOptions="Start" VerticalOptions="Center" TextColor="DarkBlue" FontAttributes="Bold"/>
+                        <Picker Grid.Row="0" Grid.Column="1" IsEnabled="{Binding IsEnabledTarjeta, Mode=TwoWay}" IsVisible="{Binding IsEnabledTarjeta, Mode=TwoWay}" TextColor="DarkBlue" HorizontalOptions="FillAndExpand" ItemsSource="{Binding BancoResponses, Mode=TwoWay}" ItemDisplayBinding="{Binding Nombre, Mode=TwoWay}" SelectedItem="{Binding BancoSeleccionado, Mode=TwoWay}"/>
+                        <Label Grid.Row="1" Grid.Column="0" IsEnabled="{Binding IsEnabledTarjeta, Mode=TwoWay}" IsVisible="{Binding IsEnabledTarjeta, Mode=TwoWay}" Text="Nro de operación" HorizontalOptions="Start" VerticalOptions="Center" TextColor="DarkBlue" FontAttributes="Bold"/>
+                        <Entry Grid.Row="1" Grid.Column="1" IsEnabled="{Binding IsEnabledTarjeta, Mode=TwoWay}" IsVisible="{Binding IsEnabledTarjeta, Mode=TwoWay}" VerticalOptions="Center"  TextColor="DarkBlue" HorizontalOptions="Fill" Placeholder="Ingrese nro de operacion" Text="{Binding CodOperacion, Mode=TwoWay}"/>
+                    </Grid>
+
+
+                    <Label  Text="{Binding MontoString, Mode=TwoWay}" IsEnabled="{Binding IsEnabledPago, Mode=TwoWay}" IsVisible="{Binding IsEnabledPago, Mode=TwoWay}" />
+
+                    <Button Margin="20" Text="Solicitar turno" IsEnabled="{Binding IsEnabledPago, Mode=TwoWay}" IsVisible="{Binding IsEnabledPago, Mode=TwoWay}" Command="{Binding RegistrarPagoCommand}"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

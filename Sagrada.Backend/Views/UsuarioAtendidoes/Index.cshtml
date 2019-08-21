@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Sagrada.Dominio.UsuarioAtendido>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CobroMedico.IdCobroMedico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ObraSocial.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistoriaClinica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CobroMedico.IdCobroMedico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObraSocial.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HistoriaClinica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdUsuarioAtendido }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdUsuarioAtendido }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdUsuarioAtendido })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sagrada.Views.HomePage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Color="DarkBlue" Opacity="0.5"/>
+
+            <Grid  Padding="10">
+                <BoxView Color="WhiteSmoke" Opacity="0.9" />
+                <StackLayout  Padding="10" BindingContext="{Binding Home}" >
+                    <Label Text="{Binding NombreString,Mode=TwoWay}" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  />
+                    <Label Text="A continuacion, seleccione una pestaña del menú" FontSize="Medium" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

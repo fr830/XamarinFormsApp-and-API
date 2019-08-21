@@ -1,0 +1,16 @@
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\Sagrada.Dominio.dll.config
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\Sagrada.Dominio.dll
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\Sagrada.Dominio.pdb
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\EntityFramework.dll
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\Newtonsoft.Json.dll
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\EntityFramework.xml
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\Newtonsoft.Json.xml
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\es\EntityFramework.resources.dll
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\bin\Release\es\EntityFramework.SqlServer.resources.dll
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\obj\Release\Sagrada.Dominio.csprojAssemblyReference.cache
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\obj\Release\Sagrada.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\obj\Release\Sagrada.Dominio.csproj.CopyComplete
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\obj\Release\Sagrada.Dominio.dll
+C:\Users\juancruz\Documents\Visual Studio 2017\Projects\Sagrada\Sagrada.Dominio\obj\Release\Sagrada.Dominio.pdb

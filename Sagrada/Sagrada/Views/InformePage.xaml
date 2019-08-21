@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sagrada.Views.InformePage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Informes">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Color="DarkBlue" Opacity="0.7"/>
+
+            <Grid Padding="425,200,425,200">
+                <BoxView Color="WhiteSmoke" Opacity="0.9" />
+                
+                <Grid Padding="150,50,150,50" RowSpacing="5"  BindingContext="{Binding Informe}">
+                    
+                    <Button Grid.Row="0"  Text="Listado de pagos particulares, discrimado por modalidad de pago" Command="{Binding PagosCommand}"/>
+                    <Button Grid.Row="1"   Text="Listado de pacientes por obra social" Command="{Binding ObrasSocialesCommand}"/>
+                    <Button Grid.Row="2"   Text="Listado de turnos de pacientes" Command="{Binding TurnosCommand}"/>
+                    <Button Grid.Row="3"   Text="Listado de espera de pacientes" Command="{Binding PacientesEsperaCommand}"/>
+                    <Button Grid.Row="4"   Text="Listado de pacientes atendidos" Command="{Binding PacientesAtendidosCommand}"/>
+
+                    <Button Grid.Row="5"   Text="Listado de pagos particulares, discriminados por modalidad de pago y médico" Command="{Binding PagosMedicoCommand}"/>
+                    <Button Grid.Row="6"   Text="Listado de pacientes por médico discriminado por obra social" Command="{Binding ObrasSocialesMedicoCommand}"/>
+
+                    <Button Grid.Row="7"   Text="Medicos que atendieron a un paciente en un periodo dado" Command="{Binding MedicosPeriodoCommand}"/>
+                    <Button Grid.Row="8"   Text="Total de pacientes atendidos en un período de tiempo determinado, discriminado por tipo de pago y obra social" Command="{Binding AtendidosPeriodoCommand}"/>
+                    <Button Grid.Row="9"   Text="Total recaudado en un período de tiempo determinado, discriminado por tipo de pago" Command="{Binding RecaudadoPeriodoCommand}"/>
+                    <Button Grid.Row="10"   Text="Total recaudado por médico en un período de tiempo determinado" Command="{Binding RecaudadoMedicoCommand}"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
